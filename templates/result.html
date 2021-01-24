@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+        <meta name="description" content="Find Instagram unfollowers">
+        <meta name="author" content="Krish Chatterjie">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="./style.css">
+        <title>Catch The Snakes</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="./logos/K_logo.svg" alt="Logo">
+        <div class="site-name">
+            <h4>Catch The Snakes</h4>
+        </div>
+        <nav>
+            <ul class="social-links">
+                <li><a href="https://github.com/KrishChatterjie" target="_blank">
+                    <img class="link" src="./logos/github.png" alt="GitHub"></a></li>
+                <li><a href="https://www.linkedin.com/in/krish-chatterjie-3119661b6/" target="_blank">
+                    <img class="link" src="./logos/linkedin-icon.svg" alt="LinkedIn"></a></li>
+                <li><a href="https://www.instagram.com/krishchatterjie/" target="_blank">
+                    <img class="link" src="./logos/instagram.svg" alt="Instagram"></a></li>
+                <li><a href="https://twitter.com/KrishChatterjie" target="_blank">
+                    <img class="link" src="./logos/twitter.svg" alt="Twitter"></a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+    <div class="light-dark-switch">
+        <input type="checkbox" name = "switch" id="light-dark-toggle">
+    </div>
+    <main>
+        <div class="backbox">
+            <div class="insta-snakes">InstaSnakes</div>
+
+            {% if list[0] == 'PRIVATEREQUEST'%}
+            <div class="request">
+                <p>We've sent you a follow request from our account @catchthesnakes101 <br><br>
+                    Please accept the request and try again, this time choosing 'Public' on the home page :)
+                </p>
+            </div>
+        
+            {% elif list[0] == 'PRIVATEIDIOT'%}
+            <div class="idiot">
+                <p>Are you an idiot? <br>Who selects 'Public' on a Private account?? <br><br>
+                    Because we're nice, we've sent you a follow request from our account @catchingsnakes101 <br><br>
+                    Accept the request and try again, this time choosing 'Public' on the home page. <br><br>
+                    Fool.
+                </p>
+            </div>
+        
+            {% else %}
+            <div class="final-username">Snakes for 
+                <a href="https://www.instagram.com/{{name}}" target="_blank">@{{name}}</a></div>
+            <div class="unfollowers">
+                <ul class="unfollowers-list">
+                {% for x in list %}
+                    <li>
+                        <div class="unfollower">
+                            <div class="pfp">
+                                <a href="https://instagram.com/{{x[0]}}" target="_blank">
+                                <img class="pfp-display" src="{{x[2]}}"></a></div>
+                            <div class="details">
+                                <div class="username-display"><a href="https://instagram.com/{{x[0]}}" target="_blank">
+                                {{x[0]}}</a></div>
+                                <div class="name-display">{{x[1]}}</div>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+        <meta name="description" content="Find Instagram unfollowers">
+        <meta name="author" content="Krish Chatterjie">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="./style.css">
+        <title>Catch The Snakes</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="./logos/K_logo.svg" alt="Logo">
+        <div class="site-name">
+            <h4>Catch The Snakes</h4>
+        </div>
+        <nav>
+            <ul class="social-links">
+                <li><a href="https://github.com/KrishChatterjie" target="_blank">
+                    <img class="link" src="./logos/github.png" alt="GitHub"></a></li>
+                <li><a href="https://www.linkedin.com/in/krish-chatterjie-3119661b6/" target="_blank">
+                    <img class="link" src="./logos/linkedin-icon.svg" alt="LinkedIn"></a></li>
+                <li><a href="https://www.instagram.com/krishchatterjie/" target="_blank">
+                    <img class="link" src="./logos/instagram.svg" alt="Instagram"></a></li>
+                <li><a href="https://twitter.com/KrishChatterjie" target="_blank">
+                    <img class="link" src="./logos/twitter.svg" alt="Twitter"></a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+    <div class="light-dark-switch">
+        <input type="checkbox" name = "switch" id="light-dark-toggle">
+    </div>
+    <main>
+        <div class="backbox">
+            <div class="insta-snakes">InstaSnakes</div>
+            <div class="preface">
+                <p>Are you tired of following people and constantly having to make sure that they're
+                    following you too? <br><br>
+                    Just enter your username and find all the people that don't follow you back!
+                </p>
+            </div>
+            <form id="form" class="form"  method="POST">
+                <ul>
+                    <li>
+                        <div class="enter-username">
+                            <label for="username" id="username-label">Your Username:</label>
+                            <input type="text" placeholder="Enter Username" id="username-input" name="username" 
+                            autocomplete="off"/>
+                        </div>    
+                    </li>
+                    <li>
+                        <div class="radios">
+                            <input type="radio" name="visibility" id="public" value="public">
+                            <label for="public" class="label">Public</label>
+                            <input type="radio" name="visibility" id="private" value="private">
+                            <label for="private" class="label">Private</label>
+                        </div>
+                    </li>
+                </ul>
+                <button class="button">Submit</button>
+            </form>
+            <div class="errors">
+                {% if  ufill %}
+                    <label class="empty-username" style="display: none;">Error: Please enter a username!<br></label>
+                {% else %}
+                    <label class="empty-username" style="display: block;">Error: Please enter a username!<br></label>
+                {% endif %}
+                {% if  vfill %}
+                    <label class="empty-radio" style="display: none;">Error: Please select Public/Private!</label>
+                {% else %}
+                    <label class="empty-radio" style="display: block;">Error: Please select Public/Private!<br></label>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

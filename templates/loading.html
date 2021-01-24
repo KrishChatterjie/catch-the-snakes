@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+        <meta name="description" content="Find Instagram unfollowers">
+        <meta name="author" content="Krish Chatterjie">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="./style.css">
+        <title>Catch The Snakes</title>
+        <script>
+            function navigate() {
+              window.location.href = 'result'; 
+            }
+            fetch('slow').then(navigate);
+        </script>
+</head>
+<body>
+    <header>
+        <img class="logo" src="./logos/K_logo.svg" alt="Logo">
+        <div class="site-name">
+            <h4>Catch The Snakes</h4>
+        </div>
+        <nav>
+            <ul class="social-links">
+                <li><a href="https://github.com/KrishChatterjie" target="_blank">
+                    <img class="link" src="./logos/github.png" alt="GitHub"></a></li>
+                <li><a href="https://www.linkedin.com/in/krish-chatterjie-3119661b6/" target="_blank">
+                    <img class="link" src="./logos/linkedin-icon.svg" alt="LinkedIn"></a></li>
+                <li><a href="https://www.instagram.com/krishchatterjie/" target="_blank">
+                    <img class="link" src="./logos/instagram.svg" alt="Instagram"></a></li>
+                <li><a href="https://twitter.com/KrishChatterjie" target="_blank">
+                    <img class="link" src="./logos/twitter.svg" alt="Twitter"></a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+    <div class="light-dark-switch">
+        <input type="checkbox" name = "switch" id="light-dark-toggle">
+    </div>
+    <main>
+        <div class="backbox">
+            <div class="insta-snakes">InstaSnakes</div>
+            <div class="load-warn">
+                <p>The more followers you have, the longer the wait is, so in this time just lay back and bask in the 
+                    glory that is your own popularity. <br><br>
+                    It takes about 2 mins to look through every 1000 (followers + following), so hang tight!
+                </p>
+            </div>
+            <div class="loader"></div>
+            <div class="darkprompt">While you're waiting, why not try out the dark mode in the top left?</div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
